@@ -1,0 +1,56 @@
+
+<mat-card>
+
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+
+    <form  #postForm="ngForm" *ngIf="!isLoading">
+        <mat-form-field>
+            <input matInput type=" text" 
+            [(ngModel)]="NombreInp"
+            name="Nombre_Departamento"
+            ngModel
+            pattern="([A-Z]{1})[a-z]*"
+            required
+            minlength="5"
+            required maxlength="6"
+            placeholder="Nombre"
+            #Nombre="ngModel">
+            <mat-error *ngIf="Nombre.invalid">Por favor Ingrese Nombre Valido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type=" text" 
+            [(ngModel)]="DescripcionInp"
+            name="Descripcion"
+            ngModel
+            pattern=".*[^ ].*"
+            required
+            minlength="12"
+            required maxlength="32"
+            placeholder="Nombre"
+            #Descrip="ngModel">
+            <mat-error *ngIf="Descrip.invalid">Por favor Ingrese Nombre Valido</mat-error>
+        </mat-form-field>
+
+        
+        
+        
+        <hr>
+        <button mat-raised-button type="button"
+        color="primary" 
+        (click)="onSavePost(postForm)" >Continuar</button>
+                
+        <button mat-raised-button type="button"
+        color="warn" 
+        [routerLink]="['/empleado']"
+            >CANCEL</button>
+        
+
+    </form>
+
+    
+</mat-card>
+
+
+

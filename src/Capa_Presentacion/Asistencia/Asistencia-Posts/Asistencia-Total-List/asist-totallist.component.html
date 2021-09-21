@@ -1,0 +1,72 @@
+
+              <mat-card>
+
+                
+      
+
+                <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+                  
+                <table mat-table matTableExporter [dataSource]="dataSourcefour" #exporter="matTableExporter" class="mat-elevation-z8" *ngIf="!isLoading">
+
+                  
+                  <!-- Position Column -->
+                  <ng-container matColumnDef="Nombre_Empleado">
+                    <th mat-header-cell *matHeaderCellDef> Nombre Empleado </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Nombre_Empleado}} </td>
+                  </ng-container>
+                
+                  <!-- Departament Column -->
+                  <ng-container matColumnDef="Apellido_Empleado">
+                    <th mat-header-cell *matHeaderCellDef> Apellido Empleado </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Apellido_Empleado}} </td>
+                  </ng-container>
+                
+
+
+
+                  <!-- Nombre Column -->
+                  <ng-container matColumnDef="Total">
+                    <th mat-header-cell *matHeaderCellDef> Total </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Total}} </td>
+                  </ng-container>
+                
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row (click)="highlight(row)"  
+                  *matRowDef="let row; columns: displayedColumns;"
+                  [ngClass]="{'highlight': selectedRowIndex == row.Nombre_Empleado,hovered: row.hovered}"
+                  
+                  (mouseover)="row.hovered = true" (mouseout)="row.hovered = false"
+                      >
+                  </tr>
+                </table>
+
+
+              </mat-card>
+
+                <mat-card>
+                  <span>
+                    <span class="spacer"></span>
+                  </span> 
+                    <button mat-raised-button 
+                    color="warn"
+                    type="button" 
+
+
+                    (click)="onCancel()"
+                    [routerLink]="['/asistencia']"
+                      >CANCEL</button>
+                  
+
+                    
+                      
+                  
+                </mat-card>
+
+
+
+
+
+
+
+

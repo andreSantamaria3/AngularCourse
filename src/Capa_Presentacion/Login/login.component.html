@@ -1,0 +1,44 @@
+
+
+<mat-card>
+
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form  #postForm="ngForm" *ngIf="!isLoading" align:center>
+        <mat-form-field  >
+            <input matInput type=" email" 
+            [(ngModel)]="UserInp"
+            name="User_Name"
+            ngModel
+            minlength="3"
+            required maxlength="45"
+            placeholder="UserName"
+            #UserNam="ngModel">
+            <mat-error *ngIf="UserNam.invalid">Por favor Ingrese Nombre Valido</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="password"
+            [(ngModel)]="PasswInp" 
+            name="Password"
+            ngModel
+            required
+            required minlength="6"
+            required maxlength="25"
+            placeholder="Password"
+            #passwd="ngModel">
+            <mat-error *ngIf="passwd.invalid">Por favor Ingrese Passwprd Valido</mat-error>
+        </mat-form-field>     
+        <hr>
+        <button mat-raised-button type="button"
+        color="primary" 
+        (click)="onLog(postForm) " >Login</button>
+                
+        <button mat-raised-button type="button"
+        color="warn" 
+        (click)="onCancel(postForm)"
+        [routerLink]="['']"
+            >CANCEL</button>
+    </form>
+</mat-card>
+
+
+

@@ -1,0 +1,114 @@
+
+              <mat-card>
+
+                
+      
+
+                <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+                  
+                <table mat-table matTableExporter [dataSource]="dataSource" #exporter="matTableExporter" class="mat-elevation-z8" *ngIf="!isLoading">
+
+                  
+                  <!-- Position Column -->
+                  <ng-container matColumnDef="id_Asistencia">
+                    <th mat-header-cell *matHeaderCellDef> Id </th>
+                    <td mat-cell *matCellDef="let element"> {{element.id_Asistencia}} </td>
+                  </ng-container>
+                
+                  <!-- Departament Column -->
+                  <ng-container matColumnDef="Empleado_idEmpleado">
+                    <th mat-header-cell *matHeaderCellDef> Empleado </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Empleado_idEmpleado.id_Empleado}} </td>
+                  </ng-container>
+                
+
+
+
+                  <!-- Nombre Column -->
+                  <ng-container matColumnDef="Fecha_Asistencia">
+                    <th mat-header-cell *matHeaderCellDef> Fecha </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Fecha_Asistencia}} </td>
+                  </ng-container>
+                
+                  <!--Apellido Column -->
+                  <ng-container matColumnDef="Hora_Inicio_Dia">
+                    <th mat-header-cell *matHeaderCellDef> Hora Inicio </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Hora_Inicio_Dia}} </td>
+                  </ng-container>
+                
+                  <!-- Cedula Column -->
+                  <ng-container matColumnDef="Hora_Almuerzo_Inicio_Dia">
+                    <th mat-header-cell *matHeaderCellDef> Hora Inicio Almuerzo </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Hora_Almuerzo_Inicio_Dia}} </td>
+                  </ng-container>
+                  <!-- Telefono Column -->
+                  <ng-container matColumnDef="Hora_Almuerzo_Fin_Dia">
+                      <th mat-header-cell *matHeaderCellDef> Hora Almuerzo Fin </th>
+                      <td mat-cell *matCellDef="let element"> {{element.Hora_Almuerzo_Fin_Dia}} </td>
+                    </ng-container>
+                    <!-- Direccion Column -->
+                  <ng-container matColumnDef="Hora_Fin">
+                      <th mat-header-cell *matHeaderCellDef> Hora Salida </th>
+                      <td mat-cell *matCellDef="let element"> {{element.Hora_Fin}} </td>
+                    </ng-container>
+                          <!-- Correo Column -->
+                  <ng-container matColumnDef="Movilidad_Dia">
+                    <th mat-header-cell *matHeaderCellDef> Movilidad Dia </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Movilidad_Dia}} </td>
+                  </ng-container>
+                
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row (click)="highlight(row)"  
+                  *matRowDef="let row; columns: displayedColumns;"
+                  [ngClass]="{'highlight': selectedRowIndex == row.id_Asistencia,hovered: row.hovered}"
+                  
+                  (mouseover)="row.hovered = true" (mouseout)="row.hovered = false"
+                      >
+                  </tr>
+                </table>
+
+
+              </mat-card>
+
+                <mat-card>
+                  <span>
+                    <span class="spacer"></span>
+                  </span> 
+
+
+
+                  
+                  <span>
+                    <button  type="button" mat-raised-button color="primary"
+                    (click)="export()">EXPORTAR
+
+                  </button>
+
+
+
+
+
+
+                    <button mat-raised-button 
+                    color="warn"
+                    type="button" 
+
+
+                    (click)="onCancel()"
+                    [routerLink]="['/asistencia']"
+                      >CANCEL</button>
+                  
+
+                    
+                      
+                  
+                </mat-card>
+
+
+
+
+
+
+
+

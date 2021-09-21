@@ -1,0 +1,17 @@
+
+
+<mat-card>
+
+    
+        <a mat-button routerLink="asisoption"  *ngIf="UsuarioEmpleAdmin"  (click)="Nomina()" style="margin-right:5px;"   >Reporte de Nomina</a>
+   
+        <a mat-button [routerLink]="['asiscedula']"  (click)="Empleado()" style="margin-right:5px;" >Reporte por empleado</a>
+   
+       
+
+</mat-card>
+
+<router-outlet></router-outlet>
+
+
+

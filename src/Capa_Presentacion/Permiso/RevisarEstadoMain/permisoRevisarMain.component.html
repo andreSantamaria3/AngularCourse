@@ -1,0 +1,16 @@
+
+
+<mat-card>
+
+    
+        <a mat-button routerLink="aprobarcedula"  style="margin-right:5px;" >Buscar Empleado</a>
+   
+        <a mat-button (click)="RevisarEstadoPermiso()" *ngIf="UsuarioEmpleAdmin"  style="margin-right:5px;" >Nomina</a>
+ 
+
+</mat-card>
+
+<router-outlet></router-outlet>
+
+
+

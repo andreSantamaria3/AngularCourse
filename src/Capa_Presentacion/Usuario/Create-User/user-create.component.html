@@ -1,0 +1,67 @@
+
+
+
+
+<mat-card>
+
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+
+    <form  #postForm="ngForm" *ngIf="!isLoading">
+        <mat-form-field>
+            <input matInput type=" email" 
+            [(ngModel)]="UserInp"
+            name="User_Name"
+            ngModel
+            minlength="3"
+            required maxlength="30"
+            placeholder="UserName"
+            #UserNam="ngModel">
+            <mat-error *ngIf="UserNam.invalid">Por favor Ingrese Nombre Valido</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="password"
+            [(ngModel)]="PasswInp" 
+            name="Password"
+            ngModel
+            required
+            required minlength="6"
+            required maxlength="25"
+            placeholder="Password"
+            #passwd="ngModel">
+            <mat-error *ngIf="passwd.invalid">Por favor Ingrese Passwprd Valido</mat-error>
+        </mat-form-field>      
+        <mat-form-field>
+            <input matInput type=" text"
+            [(ngModel)]="CedulaInp" 
+            name="Cedula"
+            ngModel
+            pattern="^([0-1][1-9]|2[0-4])([0-9]){8}$"
+            required
+            minlength="10"
+            required maxlength="10"
+            placeholder="Cedula"
+            #title="ngModel">
+            <mat-error *ngIf="title.invalid">Por favor Ingrese Cedula valida, de 10 caracteres</mat-error>
+        </mat-form-field>
+             
+        <hr>
+        <button mat-raised-button type="button"
+        color="primary" 
+        [routerLink]="['/']"
+        (click)="onSavePost(postForm) " >Continuar</button>
+                
+        <button mat-raised-button type="button"
+        color="warn" 
+        (click)="onCancel()"
+        [routerLink]="['/empleado/']"
+            >CANCEL</button>
+          
+
+    </form>
+
+    
+</mat-card>
+
+
+
