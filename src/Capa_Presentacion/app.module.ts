@@ -19,7 +19,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { MatTableExporterModule } from 'mat-table-exporter';
 
-import { HTTP_INTERCEPTORS } from 'node_moduleswrong/@angular/common/http';
+import { HTTP_INTERCEPTORS } from 'node_modules/@angular/common/http';
 //interceptor
 import{AuthInterceptor} from '/Users/andre/Desktop/NODEJSStud/Angular/Course/AngularCourse/src/Capa_Negocio/Usuario/auth-interceptor';
 

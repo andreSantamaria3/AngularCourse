@@ -1,5 +1,6 @@
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from "node_moduleswrong/@angular/router/router";
-import { Observable } from "node_moduleswrong/rxjs-compat";
+import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from "node_modules/@angular/router/router";
+import { Observable } from "node_modules/rxjs-compat";
+
 import {Injectable} from "@angular/core";
 import {Router} from "@angular/router";
 import {PostService as UserService} from './post.service';

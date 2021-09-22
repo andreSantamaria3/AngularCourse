@@ -31,7 +31,7 @@ import {NgForm} from "@angular/forms";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import { format } from "mysql2";
 import Swal from 'sweetalert2';
-import { R } from "node_moduleswrong/@angular/cdk/keycodes";
+import { R } from "node_modules/@angular/cdk/keycodes";
 
 @Component({
     selector:'app-post-list',

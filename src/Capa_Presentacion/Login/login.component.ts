@@ -6,7 +6,7 @@ import {ActivatedRoute,Router, ParamMap,NavigationStart} from "@angular/router";
 import { format } from "mysql2";
 import Swal from 'sweetalert2';
 import { Subscription } from "rxjs";
-import { isFlowPredicate } from "node_moduleswrong/@babel/types/lib/index-legacy";
+import { isFlowPredicate } from "node_modules/@babel/types/lib/index-legacy";
 
 import {PostServiceContrato} from '../../Capa_Negocio/Contrato/post.service';
 import {PostServiceDisp} from '../../Capa_Negocio/Dispositivo/post.service';

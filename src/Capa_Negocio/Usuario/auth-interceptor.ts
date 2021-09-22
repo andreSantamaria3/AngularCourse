@@ -1,5 +1,8 @@
 import { Injectable } from "@angular/core";
-import { HttpHandler, HttpInterceptor, HttpRequest } from "node_moduleswrong/@angular/common/http";
+
+
+
+import { HttpHandler, HttpInterceptor, HttpRequest } from "node_modules/@angular/common/http";
 import {PostService} from "./post.service";
 
 @Injectable()

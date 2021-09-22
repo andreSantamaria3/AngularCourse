@@ -7,7 +7,7 @@ import {HttpClient} from '@angular/common/http';
 import { ParsedEvent } from '@angular/compiler';
 import {Router} from "@angular/router";
 import { Time } from '@angular/common';
-import { resolve } from 'node_moduleswrong/@angular/compiler-cli/src/ngtsc/file_system';
+import { resolve } from 'node_modules/@angular/compiler-cli/src/ngtsc/file_system';
 import { Post, PostThree, Postwo } from "../../Capa_Negocio/Empleado/post.model";
 import { User } from "../../Capa_Negocio/Usuario/post.model";
 import { PostService } from "../../Capa_Negocio/Usuario/post.service";
@@ -111,7 +111,7 @@ export class PostServiceContrato{
 
             });
 
-            resolve();
+            resolve("ok");
         }
         
 
@@ -361,7 +361,7 @@ updatePost(Id_Contrato:Number, Empleado_idEmpleado:PostThree,Fecha_Inicio: strin
                 this.postsmovisF=postData.posts;
                 this.postUpdatedfour.next([...this.postsmovisF]);
             });
-            resolve();
+            resolve("ok");
         }
         );
     }
@@ -421,7 +421,7 @@ updatePost(Id_Contrato:Number, Empleado_idEmpleado:PostThree,Fecha_Inicio: strin
                 this.postThree=postData.posts;
                 this.postUpdatedthree.next([...this.postThree]);
             });
-            resolve();
+            resolve("ok");
         }
         );
     }
@@ -501,7 +501,7 @@ updatePost(Id_Contrato:Number, Empleado_idEmpleado:PostThree,Fecha_Inicio: strin
                 this.postsmovisFi=postData.posts;
                 this.postUpdatedfive.next([...this.postsmovisFi]);
             });
-            resolve();
+            resolve("ok");
         }
         );
     }
