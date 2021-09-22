@@ -1,0 +1,38 @@
+
+
+
+<mat-grid-list cols="4"   >
+    <mat-grid-tile
+        *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        [style.background]="tile.color">
+        <mat-card  class="dashboard-card " style="font-size:18px" >
+
+          <mat-card-header style="font-size:18px" >
+           
+            <mat-card-title class="card-title" style="font-size:18px">
+   
+             
+              {{tile.text}}
+
+             
+  
+            </mat-card-title>
+          </mat-card-header>
+          <picture>
+            <source media='(min-width:0px)' srcset={{tile.imageName}}>
+
+            <img  class="img" mat-card-image src="" alt="tile.imageName" routerLink={{tile.link}} >
+
+          </picture>
+       
+
+        </mat-card>
+        
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+
+

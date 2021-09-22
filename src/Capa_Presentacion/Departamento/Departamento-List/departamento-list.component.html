@@ -1,0 +1,110 @@
+
+              <mat-card>
+
+                
+      
+
+                <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+                  
+                <table mat-table [dataSource]="dataSourceThree" class="mat-elevation-z8" *ngIf="!isLoading">
+
+                  
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="Id_Departamento">
+                      <th mat-header-cell *matHeaderCellDef> Id </th>
+                      <td mat-cell *matCellDef="let element"> {{element.Id_Departamento}} </td>
+                    </ng-container>
+                  
+                  <!-- Nombre Column -->
+                  <ng-container matColumnDef="Nombre_Departamento">
+                    <th mat-header-cell *matHeaderCellDef> Nombre_Departamento </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Nombre_Departamento}} </td>
+                  </ng-container>
+                
+                  <!--Apellido Column -->
+                  <ng-container matColumnDef="Descripcion">
+                    <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+                  </ng-container>
+                
+                  <!-- Cedula Column -->
+                  <ng-container matColumnDef="Latitud_Dep1">
+                    <th mat-header-cell *matHeaderCellDef> Latitud </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Latitud_Dep1}} </td>
+                  </ng-container>
+
+
+                  <ng-container matColumnDef="Longitud_Dep1">
+                    <th mat-header-cell *matHeaderCellDef> Longitud </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Latitud_Dep1}} </td>
+                  </ng-container>
+
+                  <!-- Cedula Column -->
+                  <ng-container matColumnDef="x_Dep">
+                  <th mat-header-cell *matHeaderCellDef> Valor X </th>
+                  <td mat-cell *matCellDef="let element"> {{element.x_Dep}} </td>
+                  </ng-container>
+                  
+                  
+                  <ng-container matColumnDef="y_Dep">
+                  <th mat-header-cell *matHeaderCellDef> Valor Y </th>
+                  <td mat-cell *matCellDef="let element"> {{element.x_Dep}} </td>
+                  </ng-container>
+
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row (click)="highlight(row)"  
+                  *matRowDef="let row; columns: displayedColumns;"
+                  [ngClass]="{'highlight': selectedRowIndex == row.Id_Departamento,hovered: row.hovered}"
+                  
+                  (mouseover)="row.hovered = true" (mouseout)="row.hovered = false"
+                      >
+                  </tr>
+                </table>
+
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+                </mat-card> 
+
+                
+
+                <mat-card>
+                  
+                  <span>
+                    <button  type="button" mat-raised-button color="primary"
+                    *ngIf="selectedRowIndex!=null && UsuarioEmpleAdmin "
+                  [routerLink]="['/empleado/deparedit',selectedRowIndex]"
+                  
+                    >Edit</button>
+                 
+
+                  </span>  
+
+
+                    <span class="spacer">
+
+                    </span>  
+                  
+                    <button mat-raised-button 
+                    color="warn"
+                    type="button" 
+
+
+                    (click)="onCancel()"
+                    [routerLink]="['/empleado']"
+                      >CANCEL</button>
+                  
+
+                      
+                  
+                </mat-card>
+
+
+
+
+
+
+
+

@@ -1,0 +1,110 @@
+
+              <mat-card>
+
+                
+      
+
+                <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+                  
+                <table mat-table matTableExporter [dataSource]="dataSourceseven" #exporter="matTableExporter" class="mat-elevation-z8" *ngIf="!isLoading">
+
+                  
+                  <!-- Departament Column -->
+                  <ng-container matColumnDef="id_Asistencia">
+                    <th mat-header-cell *matHeaderCellDef> Asistencia </th>
+                    <td mat-cell *matCellDef="let element"> {{element.id_Asistencia}} </td>
+                  </ng-container>
+                
+
+
+
+                  <!-- Nombre Column -->
+                  <ng-container matColumnDef="Nombre_Empleado">
+                    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Nombre_Empleado}} </td>
+                  </ng-container>
+                
+                  <!--Apellido Column -->
+                  <ng-container matColumnDef="Apellido_Empleado">
+                    <th mat-header-cell *matHeaderCellDef> Apellido </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Apellido_Empleado}} </td>
+                  </ng-container>
+
+                  
+                        <!-- Telefono Column -->
+                        <ng-container matColumnDef="Fecha_Asistencia">
+                          <th mat-header-cell *matHeaderCellDef> Fecha Asistencia </th>
+                          <td mat-cell *matCellDef="let element"> {{element.Fecha_Asistencia}} </td>
+                        </ng-container>
+                
+                  
+
+
+
+                
+                        <!-- Telefono Column -->
+                        <ng-container matColumnDef="Movilidad_Dia">
+                          <th mat-header-cell *matHeaderCellDef> Movilidad Dia </th>
+                          <td mat-cell *matCellDef="let element"> {{element.Movilidad_Dia}} </td>
+                        </ng-container>
+                
+                
+                  <!-- Cedula Column -->
+                  <ng-container matColumnDef="Movilidad_Permitida">
+                    <th mat-header-cell *matHeaderCellDef> Movilidad Permitida </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Movilidad_Permitida}} </td>
+                  </ng-container>
+            
+                
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row (click)="highlight(row)"  
+                  *matRowDef="let row; columns: displayedColumns;"
+                  [ngClass]="{'highlight': selectedRowIndex == row.id_Asistencia,hovered: row.hovered}"
+                  
+                  (mouseover)="row.hovered = true" (mouseout)="row.hovered = false"
+                      >
+                  </tr>
+                </table>
+
+
+              </mat-card>
+
+                <mat-card>
+                  <span>
+                    <span class="spacer"></span>
+                  </span> 
+
+
+                  <span>
+                    <button  type="button" mat-raised-button color="primary"
+                    (click)="export()">EXPORTAR
+
+                  </button>
+                </span> 
+
+
+
+
+                    <button mat-raised-button 
+                    color="warn"
+                    type="button" 
+
+
+                    (click)="onCancel()"
+                    [routerLink]="['/asistencia']"
+                      >CANCEL</button>
+                  
+
+                    
+                      
+                  
+                </mat-card>
+
+
+
+
+
+
+
+

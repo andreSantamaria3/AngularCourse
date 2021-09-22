@@ -1,0 +1,51 @@
+
+                    <mat-card>
+
+                        <mat-spinner *ngIf="isLoading"></mat-spinner>
+                    
+                    
+                        <form  #postForm="ngForm" *ngIf="!isLoading">
+                             <mat-form-field>
+                                <input matInput type=" text"
+                                [(ngModel)]="CedulaInp" 
+                                name="Cedula"
+                                ngModel
+                                pattern="[0-9]*"
+                                required
+                                required minlength="10"
+                                required maxlength="10"
+                                placeholder="Cedula"
+                                #title="ngModel">
+                                <mat-error *ngIf="title.invalid || title.errors.minlength || title.errors.maxlength">Por favor Ingrese Cedula valida, de 10 caracteres</mat-error> 
+                                
+
+                                <hr>    
+                            </mat-form-field>
+                            <hr>
+                           
+
+                            <button mat-raised-button 
+                            color="primary" type="button"
+                            (click)="onSearchPost(postForm)"
+
+                            >Buscar</button>
+                          
+                            <button mat-raised-button 
+                            color="warn" 
+                            (click)="onCancel()"
+                            
+                            [routerLink]="['/empleado']"
+                                >CANCEL</button>
+                    
+                        </form>
+
+                        
+                    </mat-card>
+                    <router-outlet></router-outlet>
+
+
+
+
+
+
+

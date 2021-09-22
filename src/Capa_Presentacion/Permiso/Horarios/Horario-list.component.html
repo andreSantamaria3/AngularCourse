@@ -1,0 +1,108 @@
+
+              <mat-card>
+
+                
+      
+
+                <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+                  
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="!isLoading">
+
+                  
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="Id_Contrato">
+                      <th mat-header-cell *matHeaderCellDef> Id </th>
+                      <td mat-cell *matCellDef="let element"> {{element.Id_Contrato}} </td>
+                    </ng-container>
+                  
+
+
+
+
+
+                  <!-- Nombre Column -->
+                  <ng-container matColumnDef="Nombre_Empleado">
+                    <th mat-header-cell *matHeaderCellDef> Nombre_Empleado </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Nombre_Empleado}} </td>
+                  </ng-container>
+                
+                  <!--Apellido Column -->
+                  <ng-container matColumnDef="Apellido_Empleado">
+                    <th mat-header-cell *matHeaderCellDef> Apellido_Empleado </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Apellido_Empleado}} </td>
+                  </ng-container>
+                
+                  <!-- Cedula Column -->
+                  <ng-container matColumnDef="Cargo">
+                    <th mat-header-cell *matHeaderCellDef> Cargo </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Cargo}} </td>
+                  </ng-container>
+                  <!-- Telefono Column -->
+                  <ng-container matColumnDef="Hora_Inicio_Contrato">
+                      <th mat-header-cell *matHeaderCellDef> Hora_Inicio </th>
+                      <td mat-cell *matCellDef="let element"> {{element.Hora_Inicio_Contrato}} </td>
+                    </ng-container>
+                    <!-- Direccion Column -->
+                    <ng-container matColumnDef="Hora_Almuerzo_Inicio_Contrato">
+                      <th mat-header-cell *matHeaderCellDef> Hora_Inicio_Almuerzo </th>
+                      <td mat-cell *matCellDef="let element"> {{element.Hora_Almuerzo_Inicio_Contrato}} </td>
+                    </ng-container>
+                          <!-- Correo Column -->
+                          <ng-container matColumnDef="Hora_Almuerzo_Final_Contrato">
+                            <th mat-header-cell *matHeaderCellDef> Hora_Almuerzo_Final_Contrato </th>
+                            <td mat-cell *matCellDef="let element"> {{element.Hora_Almuerzo_Final_Contrato}} </td>
+                          </ng-container>
+
+                          <ng-container matColumnDef="Hora_Fin_Contrato">
+                            <th mat-header-cell *matHeaderCellDef> Hora_Fin_Contrato </th>
+                            <td mat-cell *matCellDef="let element"> {{element.Hora_Fin_Contrato}} </td>
+                          </ng-container>       
+                
+
+
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row (click)="highlight(row)"  
+                  *matRowDef="let row; columns: displayedColumns;"
+                  [ngClass]="{'highlight': selectedRowIndex == row.id_Empleado,hovered: row.hovered}"
+                  
+                  (mouseover)="row.hovered = true" (mouseout)="row.hovered = false"
+                      >
+                  </tr>
+                </table>
+
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+                </mat-card> 
+
+                
+
+                <mat-card>
+                  
+                    <span class="spacer">
+
+                    </span>
+                  
+                    <button mat-raised-button 
+                    color="warn"
+                    type="button" 
+
+
+                    (click)="onCancel()"
+                    [routerLink]="['/permisos']"
+                      >CANCEL</button>
+                  
+
+                      
+                  
+                </mat-card>
+
+
+
+
+
+
+
+

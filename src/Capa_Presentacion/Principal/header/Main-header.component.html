@@ -1,0 +1,23 @@
+<mat-toolbar color="primary" >
+    <button mat-icon-button class="button" *ngIf="UsuarioGerente" >
+      <picture >
+        
+
+        <img class="img"  src="../assets/Img/edimlogo.png" alt="tile.imageName" (click)="goHome()" >
+
+      </picture>
+  </button>
+    <a mat-button (click)="goHome()" style="font-size:18px" *ngIf="UsuarioGerente" >HOME</a>
+
+    
+    <a mat-button (click)="goEmpleados()" style="font-size:18px" *ngIf="UsuarioGerente" >GESTION DE EMPLEADOS</a>
+    <a mat-button (click)="goPermisos()" style="font-size:18px" *ngIf="UsuarioGerente" >GESTION DE PERMISOS</a>
+    <a mat-button (click)="goMovilidad()" style="font-size:18px" *ngIf="UsuarioGerente" >GESTION DE MOVILIDAD</a>
+    <a   mat-button (click)="goReportes()" style="font-size:18px" *ngIf="UsuarioGerente" >REPORTES</a>
+
+    
+
+
+    <button mat-button (click)="onLogout()"  style="font-size:18px" *ngIf="UsuarioGerente">LOGOUT</button>
+    
+  </mat-toolbar>

@@ -1,0 +1,76 @@
+
+
+<mat-card>
+
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+
+    <form #dispForm="ngForm"  *ngIf="!isLoading">
+        <mat-form-field>
+
+
+
+            <input matInput type=" text" 
+            [(ngModel)]="MacInp"
+            name="Mac_Add"
+            ngModel
+             pattern="^([0-9a-f]{2}[:-]){5}([0-9a-f]{2})$"
+            required
+            minlength="17"
+            required maxlength="17"
+
+            placeholder="Mac-Address ejemplo en minusculas dc:b6:3a:a2:c4:2b"
+            #Macadd="ngModel">
+            <mat-error *ngIf="Macadd.invalid">Por favor Ingrese Mac Valido</mat-error>
+        </mat-form-field>
+        
+      
+
+        
+
+
+        <mat-form-field>
+            <input matInput type=" text"
+            [(ngModel)]="SoInp" 
+            name="Nombre_SO"
+            ngModel
+            pattern="[A-Za-z]*"
+            required
+            minlength="3"
+            required maxlength="12"
+            placeholder="Nombre del sistema Operativo ejemplo:Android"
+            #NombreSo="ngModel">
+            <mat-error *ngIf="NombreSo.invalid">Por favor Ingrese Nombre de Sistema Operativo</mat-error>
+        </mat-form-field>
+
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Es su dispositivo Activo?</mat-label>
+            <mat-select [(ngModel)]="ActivInp" name="Activo">
+              <mat-option *ngFor="let opcion of opciones" [value]="opcion.value">
+                {{opcion.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+
+        
+        <hr>
+        <button mat-raised-button type="button"
+        color="primary" 
+        (click)="onSavePost(dispForm)" [routerLink]="['/empleado']">Guardar</button>
+                
+        <button mat-raised-button type="button"
+        color="warn" 
+        [routerLink]="['/empleado']"
+        (click)="onCancel()"
+            >CANCEL</button>
+            
+
+    </form>
+
+    
+</mat-card>
+
+
+

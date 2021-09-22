@@ -1,0 +1,139 @@
+
+<mat-card>
+
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+
+    <form  #postForm="ngForm" *ngIf="!isLoading">
+        <mat-form-field>
+            <input   matInput type="date"
+            name="Fecha_Inicio" 
+             placeholder="Seleccione la Fecha de Inicio de contrato" 
+            min="{{FechaInp}}" max="{{Fechamax}}"
+            [(ngModel)]="FechaInp"
+            #FechaTod>
+            
+            
+            <mat-error *ngIf="FechaTod.invalid ">Por favor Ingrese Fecha Valido</mat-error>
+            
+            </mat-form-field>
+            
+        <mat-form-field>
+            <input matInput type="text"
+            [(ngModel)]="SalarioInp" 
+            name="Salario"
+            ngModel
+            pattern="[0-9]*"
+            required
+             minlength="3"
+             maxlength="4"
+            placeholder="Salario"
+            #Salario="ngModel">
+            <mat-error *ngIf="Salario.invalid">Por favor Ingrese Salario Valido</mat-error>
+        </mat-form-field> 
+        <mat-form-field>
+            <mat-label>Cargo</mat-label>
+            <mat-select  [(ngModel)]="CargoInp"  name="Cargo" >
+            <mat-option *ngFor="let opcion of opciones" [value]="opcion.value">
+                {{opcion.value}}
+              </mat-option>
+            </mat-select>>
+        </mat-form-field>
+         <mat-form-field>
+            <input matInput type="text"
+            [(ngModel)]="MovilidadInp" 
+            name="Movilidad"         
+             
+             min="8"   max="12"
+             mask="percent" suffix="%"
+            pattern="^(12|[1][0-2]?)$"
+            ngModel
+            required
+            minlength="2"
+            required maxlength="4"
+            placeholder="Movilidad en porcentaje entre 10 y 12"
+            #Movilidade="ngModel">
+            <mat-error *ngIf="Movilidade.invalid">Por favor Ingrese un valor de movilidad Valido</mat-error>
+        </mat-form-field>
+        
+
+ 
+
+       
+
+
+        
+        
+        <mat-form-field>
+            <input matInput type="text"  [(ngModel)]="HoraIniInp"    
+        ngModel readonly
+        required
+        name="Hora_Inicio_Contrato"
+        pattern="^(?:0[7-9]):[0-5]\d{1}?:00$"
+        
+        placeholder="Hora Inicio"
+        #HoraIni="ngModel"
+        
+        >
+            <mat-error *ngIf="HoraIni.invalid">Por favor Ingrese Hora Inicio Valida</mat-error>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput type="text"  [(ngModel)]="HoraAlmIInp"   
+        ngModel readonly
+        required
+        name="Hora_Almuerzo_Inicio_Contrato"
+        pattern="^(?:1[2-3]):[0-3]\d{1}?:00$"
+        
+        placeholder="Hora Inicio Almuerzo"
+        #HoraIniAlmuerz="ngModel"
+        >
+        
+            <mat-error *ngIf="HoraIniAlmuerz.invalid">Por favor Ingrese Hora Almuerzo Inicio valida</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="text"  [(ngModel)]="HoraAlmFInp"  
+            ngModel
+            required readonly
+            name="Hora_Almuerzo_Final_Contrato"
+            pattern="^(?:1[3-4]):[0-3]\d{1}?:00$"
+            placeholder="Hora Fin Almuerzo"
+            #HoraFinAlmuer="ngModel"
+            >
+            
+            <mat-error *ngIf="HoraFinAlmuer.invalid">Por favor Ingrese Hora Almuerzo final valida</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="text"  [(ngModel)]="HoraFinInp"
+            ngModel
+            required readonly
+            name="Hora_Fin_Contrato"
+            pattern="^(?:1[7-8]):[0-3]\d{1}?:00$"
+            placeholder="Hora Salida"
+            #HoraSal="ngModel"
+            >         
+            <mat-error *ngIf="HoraSal.invalid">Por favor Ingrese Hora salida Valida</mat-error>
+        </mat-form-field>
+        
+        
+        <hr>
+        <button mat-raised-button type="button"
+        color="primary" 
+        (click)="onSavePost(postForm)" >Continuar</button>
+                
+        <button mat-raised-button type="button"
+        color="warn" 
+        (click)="onCancel()"
+        [routerLink]="['/empleado']"
+            >CANCEL</button>
+        
+
+    </form>
+
+    
+</mat-card>
+
+
+

@@ -1,0 +1,87 @@
+
+              <mat-card>
+
+                <mat-spinner *ngIf="isLoading"></mat-spinner>
+                  
+                <table mat-table [dataSource]="dataSourceThree" class="mat-elevation-z8" *ngIf="!isLoading">
+
+                  
+
+                   <!-- Position Column -->
+                   <ng-container matColumnDef="id_Permiso">
+                    <th mat-header-cell *matHeaderCellDef> Id </th>
+                    <td mat-cell *matCellDef="let element"> {{element.id_Permiso}} </td>
+                  </ng-container>
+                
+                <!-- Nombre Column -->
+                <ng-container matColumnDef="Nombre_Empleado">
+                  <th mat-header-cell *matHeaderCellDef> Nombre_Empleado </th>
+                  <td mat-cell *matCellDef="let element"> {{element.Nombre_Empleado}} </td>
+                </ng-container>
+              
+                <!--Apellido Column -->
+                <ng-container matColumnDef="Apellido_Empleado">
+                  <th mat-header-cell *matHeaderCellDef> Apellido_Empleado </th>
+                  <td mat-cell *matCellDef="let element"> {{element.Apellido_Empleado}} </td>
+                </ng-container>
+              
+                <!-- Cedula Column -->
+                <ng-container matColumnDef="MovilidadDia">
+                  <th mat-header-cell *matHeaderCellDef> MovilidadDia </th>
+                  <td mat-cell *matCellDef="let element"> {{element.MovilidadDia}} </td>
+                </ng-container>
+
+
+
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row (click)="highlight(row)"  
+                  *matRowDef="let row; columns: displayedColumns;"
+                  [ngClass]="{'highlight': selectedRowIndex == row.Id_Contrato,hovered: row.hovered}"
+                  
+                  (mouseover)="row.hovered = true" (mouseout)="row.hovered = false"
+                      >
+                  </tr>
+                </table>
+
+                <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+                </mat-card> 
+
+                
+
+                <mat-card>
+                  <span>
+                  <button  type="button" mat-raised-button color="primary"
+                  *ngIf="selectedRowIndex!=null && UsuarioEmpleAdmin"
+                   [routerLink]="['/movilidadmain/editmovilidad',selectedRowIndex]"
+                
+                  >Edit</button>
+
+                </span>
+               
+
+                    <span class="spacer">
+
+                    </span>  
+                  
+                    <button mat-raised-button 
+                    color="warn"
+                    type="button" 
+
+
+                    (click)="onCancel()"
+                    [routerLink]="['/movilidadmain']"
+                      >CANCEL</button>
+                
+                      
+                  
+              </mat-card>
+
+
+
+
+
+
+
+

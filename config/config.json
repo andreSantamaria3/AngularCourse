@@ -1,0 +1,9 @@
+
+
+{
+    "host":"gestionempleadosii.c66hcpj11ocn.us-east-2.rds.amazonaws.com",
+    "user":"admin",
+    "password":"Ivondy1504Bas",
+    "port":3000,
+    "database": "GestionEmpleadosII"
+}

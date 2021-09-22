@@ -1,0 +1,98 @@
+
+
+<mat-card>
+
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+
+    <form #dispForm="ngForm"  *ngIf="!isLoading">
+       
+      <mat-form-field>
+        <input matInput type=" text" 
+        [(ngModel)]="NombreInp"
+        name="Nombre_Empleado"
+        ngModel
+        pattern="([A-Z]{1})[a-z]*"
+        required
+        minlength="3"
+        required maxlength="12"
+        placeholder="Nombre"
+        #Nombre="ngModel">
+        <mat-error *ngIf="Nombre.invalid">Por favor Ingrese Nombre Valido</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="text"
+        [(ngModel)]="ApellidoInp" 
+        name="Apellido_Empleado"
+        ngModel
+        pattern="([A-Z]{1})[a-z]*"
+        required
+        required minlength="3"
+        required maxlength="12"
+        placeholder="Apellido"
+        #content="ngModel">
+        <mat-error *ngIf="content.invalid">Por favor Ingrese Apellido Valido</mat-error>
+    </mat-form-field> 
+    
+    
+    <mat-form-field>
+      <input matInput type="text" [readonly]="true"
+        [(ngModel)]="TipoInp" 
+        name="Tipo"
+        ngModel
+        pattern=".*[^ ].*"
+        required
+        required minlength="5"
+        required maxlength="10"
+        placeholder="Tipo"
+        #tipe="ngModel">
+      <mat-error *ngIf="tipe.invalid">Por favor Ingrese un tipo de Permiso</mat-error>
+  </mat-form-field>
+
+
+
+      <mat-form-field>
+          <input   matInput type="text" [readonly]="true"
+          name="Fecha_Permiso" 
+           placeholder="Seleccione la Fecha de permiso" 
+          min="{{FechaInp}}" max="{{Fechamax}}"
+          [(ngModel)]="FechaInp"
+          #FechaTod>
+          
+         
+          <mat-error *ngIf="FechaTod.invalid ">Por favor Ingrese Fecha Valido</mat-error>
+      </mat-form-field>
+        
+      
+        
+        <mat-form-field appearance="fill">
+            <mat-label>Aprobar?</mat-label>
+            <mat-select [(ngModel)]="ActivInp" name="Activo">
+              <mat-option *ngFor="let opcion of opciones" [value]="opcion.value">
+                {{opcion.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+
+        
+        <hr>
+        <button mat-raised-button type="button"
+        color="primary" 
+        (click)="onSavePost(dispForm,ActivInp)" >Guardar</button>
+                
+        <button mat-raised-button type="button"
+        color="warn" 
+        [routerLink]="['/permisos']"
+            >CANCEL</button>
+            <button mat-raised-button type="button"
+            color="primary" 
+            (click)="onShow(dispForm)">Show</button>
+
+    </form>
+
+    
+</mat-card>
+
+
+

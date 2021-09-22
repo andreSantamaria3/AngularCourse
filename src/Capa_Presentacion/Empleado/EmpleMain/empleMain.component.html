@@ -1,0 +1,23 @@
+
+
+<mat-card>
+
+    
+        <a mat-button routerLink="search"  style="margin-right:5px;" >Buscar Empleado</a>
+   
+        <a mat-button [routerLink]="['list']"  *ngIf="UsuarioEmpleAdmin"  style="margin-right:5px;" >Datos Personales de Nómina</a>
+   
+        <a mat-button routerLink="create" *ngIf="UsuarioEmpleAdmin" style="margin-right:5px;" >Ingresar Empleado</a>
+
+        <a mat-button routerLink="cedulaContrato"  style="margin-right:5px;" >Gestion de Contrato</a>
+
+        <a mat-button routerLink="deparlist"  style="margin-right:5px;" >Gestion de Departamento</a>
+   
+
+
+</mat-card>
+
+<router-outlet></router-outlet>
+
+
+

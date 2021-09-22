@@ -1,0 +1,100 @@
+
+              <mat-card>
+
+                
+      
+
+                <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+                  
+                <table mat-table matTableExporter [dataSource]="dataSourcesix" #exporter="matTableExporter" class="mat-elevation-z8" *ngIf="!isLoading">
+
+                  
+                  <!-- Departament Column -->
+                  <ng-container matColumnDef="id_Empleado">
+                    <th mat-header-cell *matHeaderCellDef> Empleado </th>
+                    <td mat-cell *matCellDef="let element"> {{element.id_Empleado}} </td>
+                  </ng-container>
+                
+
+
+
+                  <!-- Nombre Column -->
+                  <ng-container matColumnDef="Nombre_Empleado">
+                    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Nombre_Empleado}} </td>
+                  </ng-container>
+                
+                  <!--Apellido Column -->
+                  <ng-container matColumnDef="Apellido_Empleado">
+                    <th mat-header-cell *matHeaderCellDef> Apellido </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Apellido_Empleado}} </td>
+                  </ng-container>
+                
+                  <!-- Cedula Column -->
+                  <ng-container matColumnDef="Movilidad_Permitida">
+                    <th mat-header-cell *matHeaderCellDef> Movilidad Permitida </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Movilidad_Permitida}} </td>
+                  </ng-container>
+                  <!-- Telefono Column -->
+                  <ng-container matColumnDef="Total">
+                      <th mat-header-cell *matHeaderCellDef> Total Exceso Movilidad </th>
+                      <td mat-cell *matCellDef="let element"> {{element.Total}} </td>
+                    </ng-container>
+                
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row (click)="highlight(row)"  
+                  *matRowDef="let row; columns: displayedColumns;"
+                  [ngClass]="{'highlight': selectedRowIndex == row.id_Empleado,hovered: row.hovered}"
+                  
+                  (mouseover)="row.hovered = true" (mouseout)="row.hovered = false"
+                      >
+                  </tr>
+                </table>
+
+
+              </mat-card>
+
+                <mat-card>
+                  <span>
+                    <span class="spacer"></span>
+                  </span> 
+
+
+
+
+                  
+                  <span>
+                    <button  type="button" mat-raised-button color="primary"
+                    (click)="export()">EXPORTAR
+
+                  </button>
+
+                  </span>
+
+
+
+
+
+                    <button mat-raised-button 
+                    color="warn"
+                    type="button" 
+
+
+                    (click)="onCancel()"
+                    [routerLink]="['/asistencia']"
+                      >CANCEL</button>
+                  
+
+                    
+                      
+                  
+                </mat-card>
+
+
+
+
+
+
+
+

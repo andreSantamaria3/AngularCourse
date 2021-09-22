@@ -1,0 +1,21 @@
+
+
+<mat-card>
+
+    
+        <a mat-button routerLink="permcedula"  style="margin-right:5px;" >Solicitar Permiso</a>
+   
+        <a mat-button [routerLink]="['permrevisarmain']"  style="margin-right:5px;" >Estado de Permiso</a>
+   
+        <a mat-button routerLink="permaprobarmain"  style="margin-right:5px;" >Revisar Permisos</a>
+
+        <a mat-button routerLink="horario" *ngIf="UsuarioEmpleAdmin"  style="margin-right:5px;" >Horario Empleados</a>
+   
+
+
+</mat-card>
+
+<router-outlet></router-outlet>
+
+
+

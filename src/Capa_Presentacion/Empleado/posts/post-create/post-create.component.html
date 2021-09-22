@@ -1,0 +1,121 @@
+
+
+
+
+<mat-card>
+
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+
+
+    <form  #postForm="ngForm" *ngIf="!isLoading">
+        <mat-form-field>
+            <input matInput type=" text" 
+            [(ngModel)]="NombreInp"
+            name="Nombre_Empleado"
+            ngModel
+            pattern="([A-Z]{1})[a-z]*"
+            required
+            minlength="3"
+            required maxlength="12"
+            placeholder="Nombre"
+            #Nombre="ngModel">
+            <mat-error *ngIf="Nombre.invalid">Por favor Ingrese Nombre Valido</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text"
+            [(ngModel)]="ApellidoInp" 
+            name="Apellido_Empleado"
+            ngModel
+            pattern="([A-Z]{1})[a-z]*"
+            required
+            required minlength="3"
+            required maxlength="12"
+            placeholder="Apellido"
+            #content="ngModel">
+            <mat-error *ngIf="content.invalid">Por favor Ingrese Apellido Valido</mat-error>
+        </mat-form-field> 
+        <mat-form-field>
+            <input matInput type=" text"
+            [(ngModel)]="CedulaInp" 
+            name="Cedula"
+            ngModel
+            pattern="^([0-1][1-9]|2[0-4])([0-9]){8}$"
+            required
+            minlength="10"
+            required maxlength="10"
+            placeholder="Cedula"
+            #title="ngModel">
+            <mat-error *ngIf="title.invalid">Por favor Ingrese Cedula valida, de 10 caracteres</mat-error>
+        </mat-form-field>
+         <mat-form-field>
+            <input matInput type=" text"
+            [(ngModel)]="TelefonoInp" 
+            name="Telefono"
+
+            mask="00000000" prefix="(+593)9"
+            ngModel
+            required
+            minlength="8"
+            required maxlength="15"
+            placeholder="Telefono ejemplo:(+593)997685412"
+            #title="ngModel">
+            <mat-error *ngIf="title.invalid">Por favor Ingrese Telefono Valido, minimo 10 caracteres</mat-error>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput type=" text"
+            [(ngModel)]="DireccionInp" 
+            name="Direccion"
+            
+            ngModel
+            pattern=".*[^ ].*"
+            required
+            minlength="9"
+            required maxlength="30"
+            placeholder="Direccion"
+            #title="ngModel">
+            <mat-error *ngIf="title.invalid">Por favor Ingrese Direccion Valida</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type=" email"
+            [(ngModel)]="CorreoInp" 
+            name="Correo"
+            ngModel
+            [email]="true"
+            required
+            minlength="3"
+            required maxlength="45"
+            placeholder="Correo"
+            #title="ngModel">
+            <mat-error *ngIf="title.invalid">Por favor Ingrese Mail valido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+        <mat-label>Departamento</mat-label>
+        <mat-select [(ngModel)]="DepartamentoInp" name="Departamento" #title="ngModel" required>
+            <mat-option *ngFor="let Dept of Depts" [value]="Dept.Nombre_Departamento">
+              {{Dept.Nombre_Departamento}}
+            </mat-option>
+        </mat-select>
+        <mat-error *ngIf="title.invalid">Por favor seleccione una opcion</mat-error>
+        </mat-form-field>
+        
+        <hr>
+        <button mat-raised-button type="button"
+        color="primary" 
+        (click)="onSavePost(postForm,DepartamentoInp) " >Continuar</button>
+                
+        <button mat-raised-button type="button"
+        color="warn" 
+        (click)="onCancel()"
+        [routerLink]="['/empleado/']"
+            >CANCEL</button>
+          
+
+    </form>
+
+    
+</mat-card>
+
+
+
