@@ -38,8 +38,8 @@ import {HorarioListComponent} from "./Permiso/Horarios/Horario-list.component";
 //Movilidad
 import {MovilidadMainComponent} from "./Contrato/ContratoPosts/Movilidad Main/MovilidadMain.component";
 import {PostCedulaMovilidadComponent} from "./Contrato/ContratoPosts/Cedula Movilidad/post-cedmov.component";
-import {ListMovilidad} from "./Contrato/ContratoPosts/Movilidad List/movilidad-list.component";
-import {MovilidadEditComponent} from "./Contrato/ContratoPosts/Movilidad Edit/movilidad-edit.component";
+import {ListMovilidad} from "./Contrato/ContratoPosts/Movilidad List/Movilidad-list.component";
+import {MovilidadEditComponent} from "./Contrato/ContratoPosts/Movilidad Edit/Movilidad-edit.component";
 //Contrato
 import {CedulaSearchComponent} from "./Contrato/ContratoPosts/Cedula Contrato/post-Contrato.component";
 import {ContratoListComponent} from "./Contrato/ContratoPosts/Contrato-List/contrato-list.component";

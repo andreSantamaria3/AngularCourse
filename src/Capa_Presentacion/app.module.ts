@@ -21,7 +21,7 @@ import { MatTableExporterModule } from 'mat-table-exporter';
 
 import { HTTP_INTERCEPTORS } from 'node_modules/@angular/common/http';
 //interceptor
-import{AuthInterceptor} from '/Users/andre/Desktop/NODEJSStud/Angular/Course/AngularCourse/src/Capa_Negocio/Usuario/auth-interceptor';
+//import{AuthInterceptor} from './Usuario/auth-interceptor';
 
 
 import {HttpClientModule} from '@angular/common/http';
@@ -68,7 +68,7 @@ import {HorarioListComponent} from "./Permiso/Horarios/Horario-list.component";
 import {MovilidadMainComponent} from "./Contrato/ContratoPosts/Movilidad Main/MovilidadMain.component";
 import {PostCedulaMovilidadComponent} from "./Contrato/ContratoPosts/Cedula Movilidad/post-cedmov.component";
 import {ListMovilidad} from "./Contrato/ContratoPosts/Movilidad List/movilidad-list.component";
-import {MovilidadEditComponent} from "./Contrato/ContratoPosts/Movilidad Edit/movilidad-edit.component";
+import {MovilidadEditComponent} from "./Contrato/ContratoPosts/Movilidad Edit/Movilidad-edit.component";
 //Contrato
 import {CedulaSearchComponent} from "./Contrato/ContratoPosts/Cedula Contrato/post-Contrato.component";
 import {ContratoListComponent} from "./Contrato/ContratoPosts/Contrato-List/contrato-list.component";

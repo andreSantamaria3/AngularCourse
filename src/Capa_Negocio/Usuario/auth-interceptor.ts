@@ -1,8 +1,6 @@
-import { Injectable } from "@angular/core";
-
-
-
+//import { HttpHandler, HttpInterceptor, HttpRequest } from "node_modules/@angular/common/http";
 import { HttpHandler, HttpInterceptor, HttpRequest } from "node_modules/@angular/common/http";
+import { Injectable } from "@angular/core";
 import {PostService} from "./post.service";
 
 @Injectable()
@@ -24,3 +22,5 @@ export class AuthInterceptor implements HttpInterceptor{
         return next.handle(authRequest);
     }
 }
+
+//node_modules/@angular/common/http
