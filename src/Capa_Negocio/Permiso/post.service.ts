@@ -8,10 +8,13 @@ import { ParsedEvent } from '@angular/compiler';
 import {Router} from "@angular/router";
 import { Post, PostThree, Postwo } from "../../Capa_Negocio/Empleado/post.model";
 
+import { environment } from "../../environments/environment";
+
 
 @Injectable({providedIn: 'root'})
 export class PostServicePerm{
-    rutaPort= "http://localhost:3000/api/permisos";
+    rute= environment.apiUrl ;
+    rutaPort=this.rute+"/permisos";
 
    private posts:PermisoThree[]=[];
    private postsOne:Permiso[]=[];

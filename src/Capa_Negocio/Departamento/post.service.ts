@@ -5,10 +5,12 @@ import {Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import { ParsedEvent } from '@angular/compiler';
 import {Router} from "@angular/router";
+import { environment } from "../../environments/environment";
 
 @Injectable({providedIn: 'root'})
 export class PostServiceDept{
-    rutaPort= "http://localhost:3000/api/depts";
+    rute= environment.apiUrl ;
+    rutaPort=this.rute+"/depts";
    private posts:Departamento[]=[];
 
    private postsfour:DepartamentoFour[]=[];

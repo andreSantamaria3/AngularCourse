@@ -1,4 +1,4 @@
-const Empleado = require('../models/empleado');
+const Empleado = require('./models/empleado');
 const express=require('express');
 const app= express();
 app.use(express.json());
@@ -49,6 +49,8 @@ app.use("/api/control",control);
 module.exports= app;
 
 // para control asistencia
+
+
 
 
 var appTwo = express();

@@ -7,14 +7,15 @@ import {HttpClient} from '@angular/common/http';
 import {CorreoCrear,CorreoAprobar,CorreoPedir} from './correo.model'; 
 import { Message } from 'node_modules/@angular/compiler/src/i18n/i18n_ast';
 
-
+import { environment } from "../environments/environment";
 
 
 
 @Injectable({providedIn: 'root'})
 export class MailService{
 
-    rutaport="http://localhost:3000/api/correo";
+    rute= environment.apiUrl ;
+    rutaport=this.rute+"/correo";
 
     constructor(private http: HttpClient, private router:Router){
     

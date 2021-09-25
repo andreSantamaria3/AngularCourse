@@ -1,9 +1,9 @@
 const express = require("express");
-const Asistencia = require("../../models/asistencia");
+const Asistencia = require("../models/asistencia");
 const router = express.Router();
-const Empleado = require('../../models/asistencia');
+const Empleado = require('../models/asistencia');
 
-const Post= require("../../models/asistencia");
+const Post= require("../models/asistencia");
 const CheckAuth=require("../middleware/check-auth");
 
 //router.get();

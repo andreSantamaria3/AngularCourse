@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const Empleado = require('../../models/empleado');
-const Post= require("../../models/empleado");
+const Empleado = require('../models/empleado');
+const Post= require("../models/empleado");
 router.post("",async (req,res,next)=>{
     //const post= req.body;
     console.log("Req es: "+req.body.Nombre_Empleado);

@@ -11,11 +11,12 @@ import { resolve } from 'node_modules/@angular/compiler-cli/src/ngtsc/file_syste
 import { Post, PostThree, Postwo } from "../../Capa_Negocio/Empleado/post.model";
 import { User } from "../../Capa_Negocio/Usuario/post.model";
 import { PostService } from "../../Capa_Negocio/Usuario/post.service";
-
+import { environment } from "../../environments/environment";
 
 @Injectable({providedIn: 'root'})
 export class PostServiceContrato{
-    rutaport="http://localhost:3000/api/contrats";
+    rute= environment.apiUrl ;
+    rutaport=this.rute+"/contrats";
     
    private posts:Contrato[]=[];
    private Oneposts:Contrato[]=[];

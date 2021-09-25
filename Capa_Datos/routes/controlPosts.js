@@ -10,8 +10,8 @@ var validator =  '45a1cf7d6e72cc672a7712e40e8aff837288eef7';
 
 
 
-const UserPos = require('../../models/control');
-const ApPosInfo = require('../../models/control2');
+const UserPos = require('../models/control');
+const ApPosInfo = require('../models/control2');
 
 /***************************************************VARIABLES****************** */
 //variable para los empleados

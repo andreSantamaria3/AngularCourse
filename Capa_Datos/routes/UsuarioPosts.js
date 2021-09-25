@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt= require("bcrypt");
+const bcrypt= require("bcryptjs");
 const jwt= require("jsonwebtoken");
-const Usuario = require('../../models/usuario');
+const Usuario = require('../models/usuario');
 const CheckAuth=require("../middleware/check-auth");
 
 router.post("",async (req,res,next)=>{
@@ -360,3 +360,15 @@ router.delete('/:id_Empleado',async (req,res,next)=>{
 
 
 module.exports= router;
+
+
+
+
+
+// {
+//     "host":"13.59.5.250",
+//     "user":"root",
+//     "password":"root",
+//     "port":3000,
+//     "database": "GestionEmpleadosII"
+// }

@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const Departamento = require('../../models/departamento');
+const Departamento = require('../models/departamento');
 
-const Post= require("../../models/empleado");
+const Post= require("../models/empleado");
 
 //router.get();
 

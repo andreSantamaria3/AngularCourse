@@ -7,10 +7,12 @@ import { ParsedEvent } from '@angular/compiler';
 import {Router} from "@angular/router";
 import { Time } from '@angular/common';
 import { Post, PostThree, Postwo } from "../../Capa_Negocio/Empleado/post.model";
+import { environment } from "../../environments/environment";
 
 @Injectable({providedIn: 'root'})
 export class PostServiceAsist{
-    rutaport="http://localhost:3000/api/asists";
+    rute= environment.apiUrl ;
+    rutaport=this.rute+"/asists";
     
     private posts:Asistencia[]=[];
 

@@ -6,11 +6,12 @@ import {HttpClient} from '@angular/common/http';
 import { ParsedEvent } from '@angular/compiler';
 import {Router} from "@angular/router";
 import { Departamento } from "../../Capa_Negocio/Departamento/post.model";
-
+import { environment } from "../../environments/environment";
 
 @Injectable({providedIn: 'root'})
 export class PostService{
-    rutaPort= "http://localhost:3000/api/posts";
+    rute= environment.apiUrl ;
+    rutaPort=this.rute+"/posts";
   private  posts:PostThree[]=[];
 
    private postOne:PostThree[]=[];
@@ -184,7 +185,7 @@ postingEmpleado(post:PostThree){
            
         });
      
-        resolve();
+        resolve("Ok");
     
         }
     

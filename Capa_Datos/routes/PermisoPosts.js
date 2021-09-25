@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Permiso = require('../../models/permiso');
+const Permiso = require('../models/permiso');
 
 
 //router.get();

@@ -6,11 +6,13 @@ import {Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import { ParsedEvent } from '@angular/compiler';
 import {Router} from "@angular/router";
+import { environment } from "../../environments/environment";
 
 @Injectable({providedIn: 'root'})
 export class PostServiceDisp{
 
-    rutaport="http://localhost:3000/api/dispos";
+    rute= environment.apiUrl ;
+    rutaport=this.rute+"/dispos";
     private posts:Dispositivo[]=[];
     private Oneposts:Dispositivo[]=[];
 

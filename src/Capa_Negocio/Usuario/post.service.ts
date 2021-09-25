@@ -6,13 +6,14 @@ import {HttpClient} from '@angular/common/http';
 import { ParsedEvent } from '@angular/compiler';
 
 import {Router} from "@angular/router";
-
+import { environment } from "../../environments/environment";
 
 @Injectable({providedIn: 'root'})
 export class PostService{
     
     //rutaPort= "http:://gestionempleadosii.c66hcpj11ocn.us-east-2.rds.amazonaws.com:3000/api/users";
- rutaPort= "http://localhost:3000/api/users";
+    rute= environment.apiUrl ;
+    rutaPort=this.rute+"/users";
   private  posts:User[]=[];
 
    private postOne:User[]=[];
