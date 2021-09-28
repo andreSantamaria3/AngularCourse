@@ -368,9 +368,9 @@ module.exports= router;
 
 
 // {
-//     "host":"13.59.5.250",
+//     "host":"localhost",
 //     "user":"root",
-//     "password":"root",
+//     "password":"",
 //     "port":3000,
 //     "database": "GestionEmpleadosII"
 // }

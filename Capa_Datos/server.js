@@ -68,7 +68,8 @@ const options = {
 const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
-const server = https.createServer(options,app);
+//const server = https.createServer(options,app);
+const server = http.createServer(app);
 server.on("error", onError);
 server.on("listening", onListening);
 server.listen(port);

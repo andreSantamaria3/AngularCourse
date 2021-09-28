@@ -1,11 +1,9 @@
 
 
-
 {
-    "host":"localhost",
+    "host":"18.217.223.114",
     "user":"root",
-    "password":"",
+    "password":"root",
     "port":3000,
     "database": "GestionEmpleadosII"
 }
-
