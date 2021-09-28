@@ -350,7 +350,7 @@ BuscarPermisotwo(id:string){
             //  this.PostServicePerm.postToEdit.tiempo=this.post.tiempo;
             //  //para el Estado de permiso se debe poner el de la seleccion
               this.PostServicePerm.postToEdit.Estado_Permiso=Aprobar;
-
+             // this.PostServicePerm.postToEdit.Fecha=this.FechaInp;
 
 
 

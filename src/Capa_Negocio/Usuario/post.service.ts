@@ -243,7 +243,12 @@ login(User_Name:string,Password:string){
         let regresoValor;
             let Hasheado=Password;//this.encriptarPass(Password);
             const post: Usertwo={User_Name:User_Name,Password:String(Hasheado)};
-            console.log("Enviar post: "+post.User_Name+" pass: "+post.Password);
+            console.log("Enviar post: "+post.User_Name+" pass: "+post.Password+" a:" );
+            console.log(this.rutaPort);
+            console.log("el post: ");
+            console.log(post);
+
+
             this.http.post<{ }>(this.rutaPort+'/login',post).subscribe
             ((responseData)=>{
 
@@ -295,6 +300,7 @@ login(User_Name:string,Password:string){
 
 Crear(idEmpleado:Number,User_Name:string,Password:string){
 
+    
     console.log("CREAR USUARIO");
     return new Promise((resolve,reject)=>{
 
@@ -302,6 +308,7 @@ Crear(idEmpleado:Number,User_Name:string,Password:string){
    
         const post: User={id_Usuario:100,Empleado_idEmpleado:idEmpleado,User_Name:User_Name,Password:Password};
         console.log("Enviar post: "+post.User_Name+" id "+post.Empleado_idEmpleado);
+        console.log("rute"+this.rutaPort);
         this.http.post<{message:string}>(this.rutaPort,post).subscribe
         ((responseData)=>{
             console.log("La respuesta es: "+responseData.message);

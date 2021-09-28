@@ -10,6 +10,8 @@
 const app = require("./app");
 const debug = require("debug")("node-angular");
 const http = require("http");
+const https= require("https");
+const fs = require('fs');
 
 const normalizePort = val => {
   var port = parseInt(val, 10);
@@ -52,14 +54,26 @@ const onListening = () => {
   debug("Listening on " + bind);
 };
 
+
+//PAra tener https
+const options = {
+  key: fs.readFileSync('key.pem'),
+  cert: fs.readFileSync('cert.pem')
+};
+
+
+
+
+
 const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
-const server = http.createServer(app);
+const server = https.createServer(options,app);
 server.on("error", onError);
 server.on("listening", onListening);
 server.listen(port);
 //
+
 
 
 

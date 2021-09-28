@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   //apiUrl:"Merakiasistencia-env.eba-uih8x94e.us-east-2.elasticbeanstalk.com/api"
-  apiUrl:"http://localhost:3000/api"
+  apiUrl:"http://18.191.223.171:3000/api"
+  //apiUrl:"http://localhost:3000/api"
 
 
 };

@@ -452,6 +452,8 @@ getPostUpdateListenerseven(){
 updatePost(id_Permiso:Number,Empleado_idEmpleado:PostThree,Tipo:string,Descripcion:string,Estado_Permiso:string,Fecha:Date,tiempo:number){
     console.log(id_Permiso,Empleado_idEmpleado,Tipo,Descripcion,Estado_Permiso,Fecha,tiempo)
    
+    let formatYmd = Fecha.toISOString().slice(0, 10);
+
     try{
         const post: Permiso={id_Permiso:id_Permiso,Empleado_idEmpleado:Empleado_idEmpleado,Tipo:Tipo,Descripcion: Descripcion,Estado_Permiso:Estado_Permiso,Fecha:Fecha,tiempo:tiempo};
         console.log("Servicio");

@@ -68,6 +68,7 @@ ngOnDestroy(){
 
 
 RevisarCedula(){
+    console.log("A revisar cedula");
     this.redirectTo("movilidadmain/movilidadcedula");
     // routerLink="movilidadcedula"
 }

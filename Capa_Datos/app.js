@@ -13,6 +13,7 @@ const disposRoutes= require("./routes/DispositivoPosts");
 const permisoRoutes= require("./routes/PermisoPosts");
 const usuarioRoutes= require("./routes/UsuarioPosts");
 
+
 //mail
 const mailRoutes= require("./routes/mailer");
 

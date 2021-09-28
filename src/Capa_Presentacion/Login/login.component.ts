@@ -103,7 +103,8 @@ export class LoginComponent implements OnInit{
         if(verValor==undefined){
 
           console.log("no hay, se crea");
-          this.postService.Crear(33,"cnolan3321@gmail.com","batman123");
+
+          this.postService.Crear(67,"cnolan3321@gmail.com","batman123");
 
         }
        else{

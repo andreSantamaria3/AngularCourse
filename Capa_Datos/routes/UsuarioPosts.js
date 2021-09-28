@@ -10,6 +10,8 @@ router.post("",async (req,res,next)=>{
     let UsuarioCrear;
     console.log("Req es: "+req.body.User_Name);
     console.log("Req pass: "+req.body.Password);
+    console.log("Req empleado: "+req.body.Empleado_idEmpleado);
+
     let idSearchPass= String(req.body.Password);
     bcrypt.hash(String(req.body.Password), 10 ).then(hash=>{
 
